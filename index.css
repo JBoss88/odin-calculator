@@ -1,0 +1,17 @@
+.name {
+    font-weight: 800;
+    font-size: x-large;
+}
+
+.input-container, .name, .buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+   
+}
+
+button {
+    padding: 15px;
+}
