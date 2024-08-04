@@ -9,27 +9,41 @@
 </head>
 
 <body>
-  <p class="name">Calculator</p>
-  <div class="input-container">
-    <input class="input" type="text" placeholder="0">
-  </div>
-  <div class="buttons">
-    <button class="btn" id="btn0">0</button>
-    <button class="btn" id="btn1">1</button>
-    <button class="btn" id="btn2">2</button>
-    <button class="btn" id="btn3">3</button>
-    <button class="btn" id="btn4">4</button>
-    <button class="btn" id="btn5">5</button>
-    <button class="btn" id="btn6">6</button>
-    <button class="btn" id="btn7">7</button>
-    <button class="btn" id="btn8">8</button>
-    <button class="btn" id="btn9">9</button>
-    <button class="btn" id="btn+">+</button>
-    <button class="btn" id="btn-">-</button>
-    <button class="btn" id="btn*">*</button>
-    <button class="btn" id="btn/">/</button>
-    <button class="btn" id="btnEquals">=</button>
-    <button class="btn" id="btnClear">Clear</button>
-  </div>
+   <div class="container">
+      <div class="row">
+         <div class="calc-input"></div>
+    </div>
+    <div class="row">
+      <div class='button' data-value="7">7</div>
+      <div class='button' data-value="8">8</div>
+      <div class='button' data-value="9">9</div>
+      <div class='button' data-value="/">/</div>
+    </div>
+
+    <div class="row">
+      <div class='button' data-value="4">4</div>
+      <div class='button' data-value="5">5</div>
+      <div class='button' data-value="6">6</div>
+      <div class='button' data-value="*">*</div>
+    </div>
+
+    <div class="row">
+      <div class='button' data-value="1">1</div>
+      <div class='button' data-value="2">2</div>
+      <div class='button' data-value="3">3</div>
+      <div class='button' data-value="-">-</div>
+    </div>
+  
+    <div class="row">
+      <div class='button' data-value="0">0</div>
+      <div class='button' data-value=".">.</div>
+      <div class='button' data-value="=">=</div>
+      <div class='button' data-value="+">+</div>
+    </div>
+
+    <div class="row">
+      <div class='button' data-value="clear">AC</div>
+    </div>
+   </div>
 </body>
 </html>

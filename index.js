@@ -1,70 +1,58 @@
-const btns = document.querySelectorAll(".btn");
-const input = document.querySelector("input")
-const zero = document.querySelector(".zero");
-const one = document.querySelector(".one");
+const calcInput = document.querySelector('.calc-input')
+const allButtons = document.querySelectorAll('.button')
 
-let a = 0;
-let b = 0;
-let operator = ['+', '-', '*', '/'];
+const operators = ['+', '-', '*', '/'];
 
-btns.forEach(bt => {
-    bt.addEventListener("click", (e) => {
-        a = e.target.innerHTML;
-        input.value += a;
+allButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const value = e.target.dataset.value;
+
+        if (value === '=') {
+            if (calcInput.innerText.includes('+')) {
+                const splitStuff = calcInput.innerText.split('+');
+                operate('+', splitStuff[0], splitStuff[1]);
+            }
+
+            if (calcInput.innerText.includes('-')) {
+                const splitStuff = calcInput.innerText.split('-');
+                operate('-', splitStuff[0], splitStuff[1]);
+            }
+
+            if (calcInput.innerText.includes('*')) {
+                const splitStuff = calcInput.innerText.split('*');
+                operate('*', splitStuff[0], splitStuff[1]);
+            }
+
+            if (calcInput.innerText.includes('/')) {
+                const splitStuff = calcInput.innerText.split('/');
+                operate('/', splitStuff[0], splitStuff[1]);
+            }
+        }
+
+        calcInput.innerText += value;
+        
+        if (value === 'clear') {
+            calcInput.innerText = '';
+        }
     });
 });
 
-function add(a, b) {
+const operate = (operator, value1, value2) => {
+    const num1 = Number(value1);
+    const num2 = Number(value2);
+
     if (operator === '+') {
-        return a + b;
+        calcInput.innerText = num1 + num2;
+    }
+
+    if (operator === '-') {
+        calcInput.innerText = num1 - num2;
+    }
+
+    if (operator === '*') {
+        calcInput.innerText = num1 * num2;
+    }
+    if (operator === '/') {
+        calcInput.innerText = num1 / num2;
     }
 }
-
-function operate(a, b, operator) {
-    add(a, b);
-}
-operate()
-
-// function subtract(a, b) {
-    // if (operator === '-') {
-    //     return a - b;
-    // }
-// }
-
-
-// function multiply(a, b) {
-    // if (operator === '*') {
-    //     return a * b;
-    // }
-// }
-
-
-// function divide(a, b) {
-    // if (operator === '/') {
-    //     return a / b;
-    // }
-// }
-
-
-
-
-
-
-
-
-
-// let addA = 0;
-// let addB = 0;
-// const addOperator = '+';
-
-// let subtractA = 0;
-// let subtractB = 0;
-// const subtractOperator = '-';
-
-// let multiplyA = 0;
-// let multiplyB = 0;
-// const multiplyOperator = '*';
-
-// let divideA = 0;
-// let divideB = 0;
-// const divideOperator = '/';
